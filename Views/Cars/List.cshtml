@@ -1,0 +1,28 @@
+﻿@*@model IEnumerable<Shop.Data.Models.Car>*@
+
+@*@using Shop.ViewModels
+@model CarsListViewModels*@
+
+@*@{
+    Layout = "_Layout";
+}*@
+
+
+    <h2>All cars</h2>
+    @*<h1>@ViewBag.Category</h1>*@
+    <h1>@Model.currCategory</h1>
+    @*@foreach (var car in Model )
+        {
+            <div>
+                <h2>Model: @car.name</h2>
+                <p>Price: @car.price.ToString("c")</p>
+            </div>
+        }*@
+
+
+<div class="row mt-5 mb-2">
+    @foreach (Car car in Model.allCars)
+    {
+        @Html.Partial("AllCars", car)
+    }
+</div>

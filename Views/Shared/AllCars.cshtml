@@ -1,0 +1,8 @@
+﻿@model Car
+
+    <div class="col-lg-4">
+        <img class="img-thumbnail" src="@Model.img" alt="@Model.name" />
+        <h2> @Model.name</h2>
+        <p>@Model.price.ToString("c")</p>
+        <p><a class="btn btn-warning" asp-controller="ShopCart" asp-action="addToCart" asp-route-id="@Model.id">Add to cart</a></p>
+    </div>
